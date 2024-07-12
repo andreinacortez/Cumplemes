@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.card');
     cards.forEach(card => {
         card.addEventListener('click', () => {
-            alert('¡Feliz Aniversario! Te Amo Mucho 💖');
+            alert('¡Feliz CumpleMes! Te Amo Mucho 💖');
         });
     });
 });
