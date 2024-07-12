@@ -4,11 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aniversario</title>
-    <link href="https://fonts.googleapis.com/css2?family=Amifer&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assent/css/styles.css">
     <link rel="icon" href="./assent/img/thumb-1920-678417.jpg" type="image/x-icon">
-    <style>
+    <style>    .titulo5 {
+        margin: 0;
+        color: #2fe4b7; /* Color del texto */
+        font-family: 'Dancing Script', cursive;
+        font-size: 3em; /* Tamaño del texto */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra al texto */
+        letter-spacing: 2px; /* Espaciado entre letras */
+        text-align: center; /* Centrar el texto */
+        background: linear-gradient(90deg, #ffffff, #ffffff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
         .video-carousel {
             max-width: 600px;
             margin: 0 auto;
@@ -45,8 +57,8 @@
 </head>
 <body>
     <header>
-        <h1 class="letra titulo a">Feliz Cumplemes</h1>
-        <p class="date titulo"><b>13/07/2024</b> </p>
+        <h1 class=" titulo5 ">Feliz Cumple Mes</h1>
+        <p class="date titulo"><b>13/11/2022</b> </p>
     </header>
     <main>
         <div class="container">
@@ -64,7 +76,7 @@
         </div>
         
         <div class="letter-container mt-5">
-            <h2 class="titulo2 ">Mi Carta para Ti</h2>
+            <h2 class="titulo5  ">Mi Carta para Ti</h2>
             <div class="letter-content letra">
                 <p></p>
                 <p>
@@ -72,42 +84,68 @@
                     Planeo un futuro donde cada mañana pueda despertar a tu lado, y cada noche pueda desearte buenas noches con un beso. No veo la hora de poder compartir los pequeños y grandes momentos de la vida contigo. Toda esta espera valdrá la pena cuando finalmente estemos juntas.
                     Gracias por este año y ocho meses te amo.  
                 </p>
-                <p>Feliz 3er aniversario.</p>
-                <p>Andreina Cortez.</p>
+             
+                
             </div>
         </div>
 
-          <!-- Video centrado -->
-          <div class="container mt-5 video-carousel">
-            <h2 class=" titulo2 text-center ">Feliz Año ocho Meses ❤️</h2>
+           <!-- Carrusel de videos -->
+        <div class="container mt-5 video-carousel">
+            <h2 class="titulo2 text-center"></h2>
             <div id="videoCarousel" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="video-wrapper">
-                            <video id="video1" class="video-responsive" controls>
+                            <video id="video1" width="600" height="400" controls>
                                 <source src="./assent/videos/video1.mp4" type="video/mp4">
                                 Tu navegador no soporta el elemento de video.
                             </video>
                             <button class="play-button" onclick="playPause('video1')">&#9658;</button>
                         </div>
                     </div>
+                    <div class="carousel-item">
+                        <div class="video-wrapper">
+                            <video id="video2" width="600" height="400" controls>
+                                <source src="./assent/videos/video2.mp4" type="video/mp4">
+                                Tu navegador no soporta el elemento de video.
+                            </video>
+                            <button class="play-button" onclick="playPause('video2')">&#9658;</button>
+                        </div>
+                    </div>
+                   
+                    ------------------------------
                 </div>
+                <a class="carousel-control-prev" href="#videoCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <a class="carousel-control-next" href="#videoCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Siguiente</span>
+                </a>
             </div>
         </div>
+        
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="./assent/js/script.js"></script>
     <script>
-        // Función playPause para el video
         function playPause(videoId) {
             var video = document.getElementById(videoId);
+            var button = video.nextElementSibling;
             if (video.paused) {
                 video.play();
+                button.style.display = 'none';
             } else {
                 video.pause();
+                button.style.display = 'block';
             }
+
+            video.onended = function() {
+                button.style.display = 'block';
+            };
         }
     </script>
 </body>
